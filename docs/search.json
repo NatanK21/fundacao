@@ -1,30 +1,16 @@
 [
   {
-    "objectID": "projects.html#project-2",
-    "href": "projects.html#project-2",
+    "objectID": "projects.html",
+    "href": "projects.html",
     "title": "Projects",
-    "section": "Project 2",
-    "text": "Project 2"
-  },
-  {
-    "objectID": "projects.html#project-3",
-    "href": "projects.html#project-3",
-    "title": "Projects",
-    "section": "Project 3",
-    "text": "Project 3"
+    "section": "",
+    "text": "LetProg 2023-2024: Perfil dos Estudantes\nUm conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2024 foi formado para uma análise das características sociodemográficas básicas deste público. Essas características são:\n\nIdade\nGênero\nNível Escolar\nCor da pele\nRenda familiar mensal média"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About Me",
     "section": "",
-    "text": "Thanks for checking out my web site!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "LetProg 2023-2024: Perfil dos Estudantes\nUm conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2024 foi formado para uma análise das características sociodemográficas básicas deste público. Essas características são:\n\nIdade\nGênero\nNível Escolar\nCor da pele\nRenda familiar mensal média"
+    "text": "Olá! Seja bem-vindo à página de dados da Fundação Meridional!\nAqui você vai encontrar um conjunto de dados e análises a respeito das atividades da Fundação."
   }
 ]

@@ -6,14 +6,6 @@ about:
   image: img/profile.png
 ---
 
-:::{#me}
+Olá! Seja bem-vindo à página de dados da Fundação Meridional!
 
-## Goals
-
-## Education
-
-## Experience
-
-:::
-
-Thanks for checking out my web site!
+Aqui você vai encontrar um conjunto de dados e análises a respeito das atividades da Fundação.
