@@ -2,15 +2,50 @@
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "Projects",
+    "title": "Projetos",
     "section": "",
-    "text": "LetProg 2023-2024: Perfil dos Estudantes\nUm conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2024 foi formado para uma análise das características sociodemográficas básicas deste público. Essas características são:\n\nIdade\nGênero\nNível Escolar\nCor da pele\nRenda familiar mensal média"
+    "text": "Um conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2024 foi formado para uma análise das características sociodemográficas básicas deste público. Essas características são:\n\nIdade\nGênero\nNível Escolar\nCor da pele\nRenda familiar mensal média\n\nA seguir, cada característica é analisada individualmente e na relação umas com as outras.\n\n\n\nUma análise da idade dos estudantes que participaram do LetProg em 2023 e 2024 é apresentada no Gráfico 1. É possível observar que as idades variaram entre 8 e 18 anos, com uma mediana de 12 anos representando a idade do estudante típico do programa. Além disso, a altura das barras do gráfico permite observar que as idades mais frequentes são dos 9 aos 15 anos.\n\n\n\n\n\n\n\n\n\n\n\n\nOs estudantes do LetProg foram analisados quanto à distribuição por gênero no Gráfico 2. Pode-se observar que:\n\nA distribuição de estudantes que se identificavam como mulheres ou homens foi praticamente igual, com um percentual muito pequeno de mulheres a mais;\nA distribuição equivalente entre os gêneros indica que os participantes do programa representam bem a população, que apresenta as mesmas características;\nEstudantes que se identificavam com “outro” gênero foram minoria, mas, ainda assim formam um grupo expressivo de 22 participantes.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOs estudantes foram analisados em função do seu nível escolar, conforme o Gráfico 3. É possível ver que a distribuição entre os níveis é relativamente estável. O percentual dos primeiros anos (4° ao 6°) é ligeiramente maior que dos anos finais, mas essa diferença não é expressiva.\n\n\n\n\n\n\n\n\n\n\n\n\nOs estudantes foram analisados também em função da cor da pele. A escala de classificação de cor da pele do Instituto Brasileiro de Geografia e Estatística foi utilizada. Nota-se no Gráfico 4 que mais da metade dos estudantes tinham a cor da pele branca, com 23% com a cor da pele parda e 7% preta.\n\n\n\n\n\n\n\n\n\n\n\n\nOs estudantes foram avaliados em relação a renda familiar mensal média de suas familias. Os dados são apresentados no Gráfico 5. Esses dados permitem observar que:\n\nMais da metade dos estudantes não sabia dizer a renda aproximada de suas famílias, sinalizando a falta de uma literacia financeira básica;\n31% dos estudantes tinham rendas familiares de até 3 salários-mínimos, representado um máximo de R$ 3.960,00 - considerando o salário-mínimo a R$ 1.320,00. Isso indica que a maioria dos estudantes viva em condições de nível socioeconômico baixo à médio."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About Me",
+    "title": "Fundação Meridional",
     "section": "",
     "text": "Olá! Seja bem-vindo à página de dados da Fundação Meridional!\nAqui você vai encontrar um conjunto de dados e análises a respeito das atividades da Fundação."
+  },
+  {
+    "objectID": "projects.html#idade-dos-estudantes",
+    "href": "projects.html#idade-dos-estudantes",
+    "title": "Projetos",
+    "section": "",
+    "text": "Uma análise da idade dos estudantes que participaram do LetProg em 2023 e 2024 é apresentada no Gráfico 1. É possível observar que as idades variaram entre 8 e 18 anos, com uma mediana de 12 anos representando a idade do estudante típico do programa. Além disso, a altura das barras do gráfico permite observar que as idades mais frequentes são dos 9 aos 15 anos."
+  },
+  {
+    "objectID": "projects.html#gênero",
+    "href": "projects.html#gênero",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os estudantes do LetProg foram analisados quanto à distribuição por gênero no Gráfico 2. Pode-se observar que:\n\nA distribuição de estudantes que se identificavam como mulheres ou homens foi praticamente igual, com um percentual muito pequeno de mulheres a mais;\nA distribuição equivalente entre os gêneros indica que os participantes do programa representam bem a população, que apresenta as mesmas características;\nEstudantes que se identificavam com “outro” gênero foram minoria, mas, ainda assim formam um grupo expressivo de 22 participantes."
+  },
+  {
+    "objectID": "projects.html#nível-escolar",
+    "href": "projects.html#nível-escolar",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os estudantes foram analisados em função do seu nível escolar, conforme o Gráfico 3. É possível ver que a distribuição entre os níveis é relativamente estável. O percentual dos primeiros anos (4° ao 6°) é ligeiramente maior que dos anos finais, mas essa diferença não é expressiva."
+  },
+  {
+    "objectID": "projects.html#cor-da-pele",
+    "href": "projects.html#cor-da-pele",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os estudantes foram analisados também em função da cor da pele. A escala de classificação de cor da pele do Instituto Brasileiro de Geografia e Estatística foi utilizada. Nota-se no Gráfico 4 que mais da metade dos estudantes tinham a cor da pele branca, com 23% com a cor da pele parda e 7% preta."
+  },
+  {
+    "objectID": "projects.html#renda",
+    "href": "projects.html#renda",
+    "title": "Projetos",
+    "section": "",
+    "text": "Os estudantes foram avaliados em relação a renda familiar mensal média de suas familias. Os dados são apresentados no Gráfico 5. Esses dados permitem observar que:\n\nMais da metade dos estudantes não sabia dizer a renda aproximada de suas famílias, sinalizando a falta de uma literacia financeira básica;\n31% dos estudantes tinham rendas familiares de até 3 salários-mínimos, representado um máximo de R$ 3.960,00 - considerando o salário-mínimo a R$ 1.320,00. Isso indica que a maioria dos estudantes viva em condições de nível socioeconômico baixo à médio."
   }
 ]

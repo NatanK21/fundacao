@@ -1,11 +1,12 @@
 ---
-title: "About Me"
+title: "Fundação Meridional"
 about:
   id: me
   template: broadside
-  image: img/profile.png
 ---
 
 Olá! Seja bem-vindo à página de dados da Fundação Meridional!
 
 Aqui você vai encontrar um conjunto de dados e análises a respeito das atividades da Fundação.
+
+### Confira nossos projetos:

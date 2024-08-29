@@ -1,17 +1,23 @@
 ---
-title: "Projects"
+title: "Projetos"
 ---
 
 # LetProg 2023-2024: Perfil dos Estudantes
 
 ```{r}
 #| echo: false
+#| warning: false
 
 # definir working dir
 setwd("~/GitHub/dados_enter/site_fundacao")
 
 # carregar dados  
 load("~/GitHub/dados_enter/site_fundacao/dados_perfil_estudantes_letprog_2023-2024.RData")
+
+# carregar pacotes
+library(tidyverse)
+library(plotly)
+library(ggthemes)
 ```
 
 Um conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2024 foi formado para uma análise das características sociodemográficas básicas deste público. Essas características são:
@@ -25,3 +31,319 @@ Um conjunto de dados de 1411 estudantes do programa LetProg dos anos de 2023 e 2
 -   Cor da pele
 
 -   Renda familiar mensal média
+
+A seguir, cada característica é analisada individualmente e na relação umas com as outras.
+
+------------------------------------------------------------------------
+
+## Idade dos Estudantes
+
+Uma análise da idade dos estudantes que participaram do LetProg em 2023 e 2024 é apresentada no **Gráfico 1**. É possível observar que as idades variaram entre 8 e 18 anos, com uma mediana de 12 anos representando a idade do estudante típico do programa. Além disso, a altura das barras do gráfico permite observar que as idades mais frequentes são dos 9 aos 15 anos.
+
+```{r}
+#| echo: false
+#| warning: false
+dados %>%
+  mutate(idade = as.numeric(idade)) %>% 
+  ggplot(aes(x = idade)) +
+  geom_histogram(
+    bins = 10,
+    fill = "#1984c5"
+    ) +
+  scale_y_continuous(
+    name = "Frequência",
+    limits = c(0,350),
+    breaks = seq(0, 350, 50)
+    ) +
+  scale_x_continuous(
+    name = "Idade (anos)",
+    breaks = seq(8, 18, 1)
+    ) +
+  geom_vline(
+    xintercept = median(dados$idade, na.rm = TRUE),
+    linewidth = 1.5,
+    colour = "#e14b31"
+    ) +
+  annotate(
+    geom = "text",
+    x = 13,
+    y = 275,
+    label = "Mediana = 12"
+  ) +
+  theme_few() +
+  ggtitle("Gráfico 1 - Idade dos Estudantes")
+  
+```
+
+## Gênero
+
+Os estudantes do LetProg foram analisados quanto à distribuição por gênero no **Gráfico 2**. Pode-se observar que:
+
+-   A distribuição de estudantes que se identificavam como mulheres ou homens foi praticamente igual, com um percentual muito pequeno de mulheres a mais;
+
+-   A distribuição equivalente entre os gêneros indica que os participantes do programa representam bem a população, que apresenta as mesmas características;
+
+-   Estudantes que se identificavam com "outro" gênero foram minoria, mas, ainda assim formam um grupo expressivo de 22 participantes.
+
+```{r}
+#| echo: false
+#| warning: false
+dados %>% 
+  select(genero_identidade) %>% 
+  na.exclude() %>%
+  mutate(
+    genero_identidade = factor(
+      genero_identidade,
+      labels = c("Mulher", "Homem", "Outro"),
+      levels = c("Mulher", "Homem", "Outro"))
+    ) %>% 
+  ggplot(aes(x = genero_identidade)) +
+  geom_bar(aes(y = (..count..)/sum(..count..), fill ="#e14b31"),
+           show.legend = FALSE
+           ) +
+  scale_y_continuous(
+    limits = c(0, 1.0),
+    breaks = c(0, 0.20, 0.40, 0.60, 0.80, 1.00),
+    name = "Porcentagem %"
+    ) +
+  scale_x_discrete(name = "Gênero") +
+  annotate(
+    geom = "text",
+    x = "Mulher",
+    y = 0.55,
+    label = "50%"
+  ) +
+    annotate(
+    geom = "text",
+    x = "Homem",
+    y = 0.55,
+    label = "49%"
+  ) +
+    annotate(
+    geom = "text",
+    x = "Outro",
+    y = 0.07,
+    label = "1%"
+  ) +
+  theme_few() +
+  ggtitle("Gráfico 2 - Gênero dos Estudantes")
+```
+
+## Nível Escolar
+
+Os estudantes foram analisados em função do seu nível escolar, conforme o **Gráfico 3**. É possível ver que a distribuição entre os níveis é relativamente estável. O percentual dos primeiros anos (4° ao 6°) é ligeiramente maior que dos anos finais, mas essa diferença não é expressiva.
+
+```{r}
+#| echo: false
+#| warning: false
+dados %>% 
+  select(escolaridade) %>% 
+  na.exclude() %>% 
+  ggplot(aes(y = escolaridade)) +
+  geom_bar(aes(x = (..count..)/sum(..count..), fill = "#1984c5"),
+           show.legend = FALSE
+           ) +
+  scale_x_continuous(
+    limits = c(0.00, 1.00),
+    breaks = c(0, 0.20, 0.40, 0.60, 0.80, 1.00),
+    name = "Porcentagem %",
+  ) +
+  scale_y_discrete(name = "Nível Escolar") +
+  annotate(
+    geom = "text",
+    y = "9º ano",
+    x = 0.14,
+    label = "11%"
+  ) +
+    annotate(
+    geom = "text",
+    y = "8º ano",
+    x = 0.22,
+    label = "18%"
+  ) +
+    annotate(
+    geom = "text",
+    y = "7º ano",
+    x = 0.19,
+    label = "15%"
+  ) +
+    annotate(
+    geom = "text",
+    y = "6º ano",
+    x = 0.24,
+    label = "20%"
+  ) +
+    annotate(
+    geom = "text",
+    y = "5º ano",
+    x = 0.25,
+    label = "22%"
+  ) +
+    annotate(
+    geom = "text",
+    y = "4º ano",
+    x = 0.18,
+    label = "14%"
+  ) +
+   theme_few() +
+  ggtitle("Gráfico 3 - Nível Escolar dos Estudantes")
+  
+```
+
+## Cor da Pele
+
+Os estudantes foram analisados também em função da cor da pele. A escala de classificação de cor da pele do **Instituto Brasileiro de Geografia e Estatística** foi utilizada. Nota-se no **Gráfico 4** que mais da metade dos estudantes tinham a cor da pele branca, com 23% com a cor da pele parda e 7% preta.
+
+```{r}
+#| echo: false
+#| warning: false
+dados %>% 
+  select(cor_pele) %>% 
+  na.exclude() %>% 
+  ggplot(aes(y = cor_pele)) +
+  geom_bar(aes(x = (..count..)/sum(..count..), fill = "#1984c5"),
+           show.legend = FALSE
+           ) +
+  scale_x_continuous(
+    limits = c(0.00, 1.00),
+    breaks = c(0, 0.20, 0.40, 0.60, 0.80, 1.00),
+    name = "Porcentagem %",
+  ) +
+  scale_y_discrete(
+    name = "Cor da Pele",
+    limits = c(
+    "Amarela",
+    "Indígena",
+    "Prefiro não classificar",
+    "Preta",
+    "Parda",
+    "Branca")
+    ) +
+  annotate(
+    geom = "text",
+    y = "Branca",
+    x = 0.65,
+    label = "61%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Parda",
+    x = 0.27,
+    label = "23%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Preta",
+    x = 0.11,
+    label = "7%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Prefiro não classificar",
+    x = 0.09,
+    label = "6%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Indígena",
+    x = 0.05,
+    label = "2%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Amarela",
+    x = 0.05,
+    label = "1%"
+  ) +
+  theme_few() +
+  ggtitle("Gráfico 4 - Cor da Pele dos Estudantes")
+```
+
+## Renda
+
+Os estudantes foram avaliados em relação a renda familiar mensal média de suas familias. Os dados são apresentados no **Gráfico 5.** Esses dados permitem observar que:
+
+-   Mais da metade dos estudantes não sabia dizer a renda aproximada de suas famílias, sinalizando a falta de uma literacia financeira básica;
+
+-   31% dos estudantes tinham rendas familiares de até 3 salários-mínimos, representado um máximo de R\$ 3.960,00 - considerando o salário-mínimo a R\$ 1.320,00. Isso indica que a maioria dos estudantes viva em condições de nível socioeconômico baixo à médio.
+
+```{r}
+#| echo: false
+#| warning: false
+dados %>% 
+  select(renda) %>% 
+  na.exclude() %>% 
+  ggplot(aes(y = renda)) +
+  geom_bar(aes(x = (..count..)/sum(..count..), fill = "#1984c5"),
+           show.legend = FALSE
+           ) +
+  scale_x_continuous(
+    limits = c(0.00, 1.00),
+    breaks = c(0, 0.20, 0.40, 0.60, 0.80, 1.00),
+    name = "Porcentagem %",
+  ) +
+  scale_y_discrete(
+    name = "Renda",
+    limits = c(
+  "Mais de 10 sm",
+  "De 6 a 10 sm",
+  "De 3 a 6 sm",
+  "De 2 a 3 sm",
+  "De 1 a 2 sm",
+  "Até 1 sm",
+  "Não sei"
+  ),
+    labels = c(
+  "> 10 SM",
+  "6 a 10 SM",
+  "3 a 6 SM",
+  "2 a 3 SM",
+  "1 a 2 SM",
+  "Até 1 SM",
+  "Não sei"
+  )) +
+  annotate(
+    geom = "text",
+    y = "Não sei",
+    x = 0.57,
+    label = "53%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "Até 1 sm",
+    x = 0.12,
+    label = "8%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "De 1 a 2 sm",
+    x = 0.17,
+    label = "13%"
+  ) +
+  annotate(
+    geom = "text",
+    y = "De 2 a 3 sm",
+    x = 0.13,
+    label = "10%"
+  ) + 
+  annotate(
+    geom = "text",
+    y = "De 3 a 6 sm",
+    x = 0.14,
+    label = "10%"
+  ) + 
+  annotate(
+    geom = "text",
+    y = "De 6 a 10 sm",
+    x = 0.07,
+    label = "4%"
+  ) + 
+  annotate(
+    geom = "text",
+    y = "Mais de 10 sm",
+    x = 0.06,
+    label = "2%"
+  ) + 
+  theme_few() +
+  ggtitle("Gráfico 5 - Renda Familiar dos Estudantes")
+```
